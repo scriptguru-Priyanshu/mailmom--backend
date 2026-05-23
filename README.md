@@ -1,58 +1,312 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# MailMoM.ai
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> AI-powered Minutes of Meeting (MoM) Generator & Auto Mailer
 
-## About Laravel
+MailMoM.ai helps teams automatically generate structured Minutes of Meeting (MoM), extract action items, assign tasks, and send summary emails to participants.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# ✨ Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* 🧠 AI-generated meeting summaries
+* ✅ Automatic action item extraction
+* 👥 Participant management
+* 📧 Auto-mailing of meeting summaries
+* 📌 Task assignment system
+* 🔐 Authentication with Laravel Sanctum
+* ⚡ Modern Next.js frontend
+* 🚀 REST API powered by Laravel
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+# 🏗️ Project Structure
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+MailMoM.ai/
+│
+├── backend/     # Laravel API
+└── frontend/    # Next.js frontend
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
+# 🛠️ Tech Stack
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Frontend
 
-## Code of Conduct
+* Next.js
+* React
+* Tailwind CSS
+* Axios
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Backend
 
-## Security Vulnerabilities
+* Laravel
+* Sanctum Authentication
+* MySQL
+* Queue Jobs
+* Mail System
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+# 🚀 Getting Started
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 1. Clone Repository
+
+```bash
+git clone https://github.com/your-username/mailmom-ai.git
+cd mailmom-ai
+```
+
+---
+
+# ⚙️ Backend Setup (Laravel)
+
+## Navigate to backend
+
+```bash
+cd backend
+```
+
+## Install dependencies
+
+```bash
+composer install
+```
+
+## Copy environment file
+
+```bash
+cp .env.example .env
+```
+
+## Generate application key
+
+```bash
+php artisan key:generate
+```
+
+## Configure database
+
+Update your `.env` file:
+
+```env
+DB_DATABASE=mailmom
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+---
+
+## Run migrations
+
+```bash
+php artisan migrate
+```
+
+---
+
+## Start backend server
+
+```bash
+php artisan serve
+```
+
+Backend will run on:
+
+```bash
+http://127.0.0.1:8000
+```
+
+---
+
+# 🌐 Frontend Setup (Next.js)
+
+## Navigate to frontend
+
+```bash
+cd frontend
+```
+
+## Install dependencies
+
+```bash
+npm install
+```
+
+---
+
+## Configure environment variables
+
+Create:
+
+```bash
+.env.local
+```
+
+Add:
+
+```env
+NEXT_PUBLIC_API_URL=http://127.0.0.1:8000/api
+```
+
+---
+
+## Start frontend server
+
+```bash
+npm run dev
+```
+
+Frontend will run on:
+
+```bash
+http://localhost:3000
+```
+
+---
+
+# 🔐 Sanctum Authentication Setup
+
+Ensure backend CORS configuration allows frontend origin.
+
+Example:
+
+```php
+'allowed_origins' => ['http://localhost:3000'],
+```
+
+Frontend requests should include credentials:
+
+```js
+withCredentials: true
+```
+
+---
+
+# 📬 Mail Configuration
+
+Configure mail credentials inside backend `.env`
+
+```env
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=your-email@gmail.com
+MAIL_PASSWORD=your-password
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=your-email@gmail.com
+MAIL_FROM_NAME="MailMoM.ai"
+```
+
+---
+
+# 🧠 AI Workflow
+
+```text
+Meeting Transcript
+        ↓
+AI Summary Generation
+        ↓
+Action Item Extraction
+        ↓
+Task Creation
+        ↓
+Auto Email Sending
+```
+
+---
+
+# 📦 API Features
+
+## Authentication
+
+* Register
+* Login
+* Logout
+* Current User
+
+## Meetings
+
+* Create meeting
+* Generate summary
+* Extract action items
+* List meetings
+* Meeting details
+
+## Tasks
+
+* Assign tasks
+* Update task status
+* Track progress
+
+## Dashboard
+
+* Meetings count
+* Tasks count
+* Participants count
+
+---
+
+# 📸 Screenshots
+
+
+
+---
+
+# 🧪 Useful Commands
+
+## Backend
+
+```bash
+php artisan serve
+php artisan migrate
+php artisan queue:work
+php artisan config:clear
+php artisan cache:clear
+```
+
+---
+
+## Frontend
+
+```bash
+npm run dev
+npm run build
+npm run start
+```
+
+---
+
+# 🚀 Future Improvements
+
+* 🎙️ Real-time meeting transcription
+* 📊 Analytics dashboard
+* 🔔 Task reminders
+* 🧵 Threaded meeting discussions
+* 🤖 AI follow-up suggestions
+* 📅 Calendar integrations
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+---
+
+# 📄 License
+
+MIT License
+
+---
+
+# 💡 About
+
+MailMoM.ai is designed to simplify meeting workflows by combining AI-powered summaries with automatic task extraction and email automation.
