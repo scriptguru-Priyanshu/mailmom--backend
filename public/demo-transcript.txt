@@ -1,0 +1,48 @@
+Meeting Title: E-Commerce Website Redesign Discussion
+
+Participants:
+Arjun, Sneha, Vivek, Riya
+
+Transcript:
+
+Arjun: Good afternoon everyone. Today’s meeting is about finalizing the redesign plan for our e-commerce website before development starts.
+
+Sneha: The design team has completed the new homepage mockups. We focused on improving mobile responsiveness and simplifying navigation.
+
+Vivek: From the development side, the new UI components are feasible, but implementing the advanced product filtering system may take extra time.
+
+Riya: Customer feedback also suggested that checkout should be faster and require fewer steps.
+
+Arjun: That’s important. Can we reduce the checkout process from five steps to three?
+
+Vivek: Yes, but we’ll need approval from the payments team because some verification screens may need adjustments.
+
+Sneha: I also think we should add a dark mode option since many users requested it.
+
+Riya: Agreed. It would improve user experience, especially for mobile users.
+
+Arjun: Alright, let’s include dark mode in phase one itself.
+
+Vivek: For timelines, frontend implementation should take around two weeks. Backend integration may require another week.
+
+Riya: Marketing wants preview screenshots by next Thursday so they can prepare launch campaigns.
+
+Sneha: I can provide finalized screenshots by Wednesday evening.
+
+Arjun: Great. Vivek, please coordinate with the payments team and confirm checkout changes by Friday.
+
+Vivek: Sure, I’ll handle it.
+
+Riya: We should also run a usability testing session before launch.
+
+Arjun: Good idea. Let’s schedule usability testing for next Monday.
+
+Sneha: One more thing — product search performance needs optimization because current search feels slow.
+
+Vivek: I’ll review search indexing and improve response time during backend optimization.
+
+Arjun: Perfect. So our key priorities are mobile responsiveness, faster checkout, dark mode, and search optimization.
+
+Riya: That covers everything from my side.
+
+Arjun: Thanks everyone. Let’s reconvene next Friday for progress updates.
